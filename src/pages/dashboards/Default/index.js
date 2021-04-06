@@ -10,10 +10,11 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import * as Icon from "@material-ui/icons";
 import Optiwattlogo from "../../../imgs/logo-colored.svg";
 import Sdgelogo from "../../../imgs/sdge.svg";
 import Leaplogo from "../../../imgs/leap_logo.png";
-import Joinlogos from "../../../imgs/Vector.png";
 const useStyles = makeStyles({
   root: {
     backgroundColor: "#ffffff",
@@ -106,7 +107,7 @@ const useStyles = makeStyles({
 
 const buttonData = [
   {
-    name: "authorize",
+    name: "Authorize",
   },
   {
     name: "Skip for Later",
@@ -152,31 +153,55 @@ function Default() {
             </Typography>
           </Typography>
           <Grid container spacing={2} className={classes.logos}>
-            <Grid xs={5} md={5.5} className={classes.logocontent}>
-              <img
-                alt="logo"
-                src={Optiwattlogo}
-                style={{ width: "110px", marginLeft: "20px", marginTop: "3px" }}
-              />
+            <Grid item={true} xs={5} md={5} className={classes.logocontent}>
+              <Paper>
+                <img
+                  alt="logo"
+                  src={Optiwattlogo}
+                  style={{
+                    width: "110px",
+                    marginLeft: "20px",
+                    marginTop: "3px",
+                  }}
+                />
+              </Paper>
             </Grid>
             <Grid
+              item={true}
               xs={2}
-              md={1}
-              style={{ textAlign: "center", marginTop: "10px", margin: "auto" }}
+              md={2}
+              style={{ textAlign: "center", margin: "9px auto 0" }}
             >
-              <img alt="Joinlogos" src={Joinlogos} />
+              <Paper>
+                <Icon.InsertLink />
+              </Paper>
             </Grid>
-            <Grid container xs={5} md={5.5} className={classes.logocontent}>
-              <Grid xs={6} md={6}>
-                <img
-                  alt="Sdgelogo"
-                  src={Sdgelogo}
-                  width="40px"
-                  style={{ marginLeft: "20px", marginTop: "5px" }}
-                />
+            <Grid
+              item={true}
+              container
+              xs={5}
+              md={5}
+              className={classes.logocontent}
+            >
+              <Grid item={true} xs={6} md={6}>
+                <Paper>
+                  <img
+                    alt="Sdgelogo"
+                    src={Sdgelogo}
+                    width="40px"
+                    style={{ marginLeft: "20px", marginTop: "5px" }}
+                  />
+                </Paper>
               </Grid>
-              <Grid xs={6} md={6}>
-                <img alt="Leaplogo" src={Leaplogo} width="50px" height="33px" />
+              <Grid item={true} xs={6} md={6}>
+                <Paper>
+                  <img
+                    alt="Leaplogo"
+                    src={Leaplogo}
+                    width="50px"
+                    height="33px"
+                  />
+                </Paper>
               </Grid>
             </Grid>
           </Grid>
